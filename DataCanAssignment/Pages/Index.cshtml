@@ -1,0 +1,55 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container-box">
+    <div class="flex flex-sb">
+        <p>Welcome, John Smith!</p>
+        <div>
+            <div>
+                <div class="flex flex-sb">
+                    <p>Account: </p>
+                    <form action="" class="width-100 ">
+                        <select name="Account" id="account" class=" width-100" required>
+                            <option value="0">1234</option>
+                        </select>
+                    </form>
+                    @* <input type="number" name="Account" id="account" class="width-100" required> *@
+                </div>
+                <div class=" flex flex-sb">
+                    <p>Balance: </p>
+                    <p>$@Model.Balance <span>(CAD)</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" inner-box">
+        <form action="" method="post" class=" flex flex-gap-col-center">
+            <div class=" flex">
+                <div>
+                    <label for="Amount">Amount</label>
+                    <input type="number" name="Amount" id="amount" step="0.01" value="@Model.Amount" required>
+                </div>
+                <div>
+                    <select name="CurrencyType" id="currencyType" required>
+                        <option value="CAD">CAD</option>
+                        <option value="USD">USD</option>
+                        <option value="MXN">MXN</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" asp-page-handler="Withdraw">Withdraw</button>
+                <button type="submit" asp-page-handler="Deposit">Deposit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+</div>
